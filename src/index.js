@@ -16,6 +16,7 @@ inputRef.addEventListener('input', debounce(onSearch, 500));
 
 function onSearch(event) {
   const inputValue = event.target.value;
+  if (inputValue === '') resetList();
   fetchCountries(inputValue).then(renderResult);
 }
 
