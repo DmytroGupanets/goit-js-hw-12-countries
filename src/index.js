@@ -23,14 +23,14 @@ function onSearch(event) {
 function renderResult(result) {
   if (!result) {
     error({
-      text: 'Input is empty',
+      text: 'No matches found. Please check the correct spelling',
       delay: 3000,
     });
   }
   if (result.length > 10)
     return error({
       text: 'Too many matches found. Please enter a more specific query!',
-      delay: 2000,
+      delay: 3000,
     });
   if (result.length < 10 && result.length > 1) createListOfCountries(result);
   if (result.length === 1) showMainCountryData(result[0]);
