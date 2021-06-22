@@ -21,6 +21,12 @@ function onSearch(event) {
 }
 
 function renderResult(result) {
+  if (!result) {
+    error({
+      text: 'Input is empty',
+      delay: 3000,
+    });
+  }
   if (result.length > 10)
     return error({
       text: 'Too many matches found. Please enter a more specific query!',
